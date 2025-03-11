@@ -9,8 +9,7 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <div class="navbar" id="menuToggle">☰</div>
+    <div id="menu-container"></div>
     
     <!-- Slide-in Menu -->
     <nav class="menu" id="menu">
@@ -35,21 +34,7 @@
 
     <footer>© 2025 Emanuele Francesco Pizzochera.</footer>
 
-    <script>
-        document.getElementById("menuToggle").addEventListener("click", function () {
-            document.getElementById("menu").classList.toggle("active");
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener("click", function (event) {
-            const menu = document.getElementById("menu");
-            const menuToggle = document.getElementById("menuToggle");
-
-            if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
-                menu.classList.remove("active");
-            }
-        });
-    </script>
+    <script src="menu.js"></script>
 
 </body>
 </html>
