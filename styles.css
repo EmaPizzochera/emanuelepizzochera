@@ -1,297 +1,91 @@
-:root {
-    --global-bg-color: #f7efee;
-    --global-code-bg-color: rgba(54, 160, 181, 0.05);
-    --global-text-color: #000000;
-    --global-text-color-light: #828282;
-    --global-theme-color: #36a0b5;
-    --global-hover-color: #36a0b5;
-    --global-hover-text-color: #f7efee;
-    --global-footer-bg-color: #1C1C1D;
-    --global-footer-text-color: #e8e8e8;
-    --global-footer-link-color: #f7efee;
-    --global-distill-app-color: #828282;
-    --global-divider-color: rgba(0,0,0,.1);
-    --global-card-bg-color: #f7efee;
-    --global-tip-block: #42b983;
-    --global-tip-block-bg: #e2f5ec;
-    --global-tip-block-text: #215d42;
-    --global-tip-block-title: #359469;
-    --global-warning-block: black;
-    --global-warning-block-bg: #fff8d8;
-    --global-warning-block-text: #6b5900;
-    --global-warning-block-title: #b29400;
-    --global-danger-block: #c00;
-    --global-danger-block-bg: #ffe0e0;
-    --global-danger-block-text: #600;
-    --global-danger-block-title: #c00;
-  }
-
-@font-face {
-  font-family: 'Encore Sans Pro Bold';
-  src: url('/Users/emanuelefrancescopizzochera/Desktop/Website/emanuelepizzochera/fonts/pf-encore-sans-pro/fonts/pf-encore-sans-pro/PFEncoreSansPro-Bold.ttf') format('ttf');
+/* General Reset */
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #222;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-p {
-  margin-left: 50px;
+/* Navigation Bar */
+.navbar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 24px;
+  background: #222;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
 }
 
-.encore-sans-pro-bold {
-  font-family: "Encore Sans Pro Bold", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.abril-fatface-regular {
-    font-family: "Abril Fatface", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-body{
-    min-height: 200vh;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    background: #f7efee;
-    text-align: center;
-    font-family: "Lato", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-    font-size: large;
-  }
-
-h1 {
-    font-family: 'Lato'; /* Use your custom font for h1 */
-    font-weight: 900;
-    font-style: normal;
-    margin: 50px;
-}
-
-footer{
-  margin-top: auto;
-}
-
-footer.fixed-bottom {
-    background-color: var(--global-footer-bg-color);
-    font-size: 0.75rem;
-    font-family: 'Lato';
-  }
-  footer.fixed-bottom .container {
-    color: var(--global-footer-text-color);
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
-  footer.fixed-bottom a {
-    color: var(--global-footer-link-color);
-  }
-  footer.fixed-bottom a:hover {
-    color: var(--global-theme-color);
-    text-decoration: none;
-  }
-  
-  footer.sticky-bottom {
-    border-top: 1px solid var(--global-divider-color);
-    padding-top: 40px;
-    padding-bottom: 40px;
-    font-size: 0.9rem;
-  }
-
-  .icon {
-    display: inline-block;
-    width: 40px; /*Distance between icons*/
-    height: 30px;
-    font-size: 60px; /* Adjust the size according to your needs */
-    line-height: 10px; /* Center the icon vertically */
-    text-align: center; /* Center the icon horizontally */
-    color: #333; /* Adjust icon color */
-    margin: 10px;
-    transition: transform 0.3s ease; /* Smooth transition for the jump effect */
-}
-
-.icon:hover {
-    transform: translateY(-10px); /* Move the icon 5 pixels upwards */
-}
-
-.lato-thin {
-    font-family: "Lato", sans-serif;
-    font-weight: 100;
-    font-style: normal;
-  }
-  
-  .lato-light {
-    font-family: "Lato", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-  }
-  
-  .lato-regular {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .lato-bold {
-    font-family: "Lato", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-  }
-  
-  .lato-black {
-    font-family: "Lato", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-  }
-  
-  .lato-thin-italic {
-    font-family: "Lato", sans-serif;
-    font-weight: 100;
-    font-style: italic;
-  }
-  
-  .lato-light-italic {
-    font-family: "Lato", sans-serif;
-    font-weight: 300;
-    font-style: italic;
-  }
-  
-  .lato-regular-italic {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-  }
-  
-  .lato-bold-italic {
-    font-family: "Lato", sans-serif;
-    font-weight: 700;
-    font-style: italic;
-  }
-  
-  .lato-black-italic {
-    font-family: "Lato", sans-serif;
-    font-weight: 900;
-    font-style: italic;
-  }
-
-  /* Custom links */
-  .custom-link {
-    color: black; /* Default link color */
-    text-decoration: underline; /* Remove underline */
-    transition: color 0.5s ease; /* Smooth transition for color change */
-}
-
-.custom-link:hover {
-    color: #f7efee; /* Change text color to white on hover */
-    background-color: black; /* Highlight the background in black */
-}
-
-
-/* Add a black background color to the top navigation */
-.topnav {
+/* Slide-in Menu */
+.menu {
   position: fixed;
   top: 0;
-  right: 0;
-  padding: 10px;
+  right: -200px; /* Initially hidden */
+  width: 200px;
+  height: 100vh;
+  background: #222;
+  transition: right 0.3s ease-in-out;
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  background-color: #f7efee;
-  overflow: hidden;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: black;
-  padding: 10px;
-  text-decoration: none;
-  font-size: 17px;
-  font-family: 'Lato';
-  display: block;
-}
-
-
-
-/* Add a color to the active/current link */
-.topnav a.active {
-  color: #f7efee;
-  text-decoration: underline;
-  text-decoration-thickness: 2px; /* Optional: control thickness of underline */
-  text-underline-offset: 4px;     /* Optional: control distance of underline from text */
-}
-
-.main {
-  display: flex;
-  text-align: justify;
-  max-width: 1200px;
-  margin-left: 0 auto;
+  flex-direction: column;
+  justify-content: center;
   padding: 20px;
 }
 
-/* Content area (text) */
-.content {
-  flex: 1;                    /* Allow content to take up remaining space */
-  margin-right: 50px;         /* Space between text and profile photo */
-  font-size: 35px;
+.menu.active {
+  right: 0; /* Slide in */
 }
 
-/* Profile photo styles */
-.profile-photo img {
-  height: auto;               /* Maintain aspect ratio */
-  width: 440px;
-}
-
-/* Styles for the top bar */
-.top-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #f7efee;
-  color: black;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-}
-
-.top-bar .name {
-  font-family: 'Lato', sans-serif;
-  font-size: 2em;
-  margin-left: 20px;
-}
-
-.top-bar .topnav {
-  position: absolute;
-  display: flex;
-  margin-right: 30px;
-}
-
-.top-bar .topnav a {
-  float: left;
-  color: black;
-  padding: 10px 20px;
+/* Menu Items */
+.menu a {
   text-decoration: none;
-  font-size: 17px;
-  font-family: 'Lato';
-  font-weight: 400;
+  color: white;
+  font-size: 18px;
+  display: block;
+  padding: 15px 10px;
+  text-align: left;
 }
 
-.top-bar .topnav a:hover {
-  background-color: black;
-  color: #f7efee;
-  transition: color 0.5s ease;
+.menu a:hover {
+  background: #444;
 }
 
-.top-bar .topnav a.active {
+/* Profile Photo */
+.profile-photo img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* Description */
+.description {
+  max-width: 600px;
+  font-size: 18px;
+  line-height: 1.6;
+  padding: 0 20px;
+}
+
+/* Links */
+.custom-link {
+  color: #222;
   text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
 }
 
-body {
-  padding-top: 60px; /* Prevents content from hiding behind the fixed top bar */
-}
-
-* {
-  box-sizing: border-box;
+/* Footer */
+footer {
+  font-size: 14px;
+  margin-top: 20px;
+  color: #777;
 }

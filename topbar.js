@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="topnav">
             <a href="/emanuelepizzochera/index.html">Home</a>
             <a href="/emanuelepizzochera/cv.html">CV</a>
-            <a href="#teaching">Teaching</a>
             <a href="#research">Research</a>
+            <a href="#teaching">Teaching</a>
             <a href="/emanuelepizzochera/contact.html">Contacts</a>
         </div>
     `;
