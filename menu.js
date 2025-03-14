@@ -1,21 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.getElementById("menuToggle");
     const menu = document.getElementById("menu");
+    const menuToggle = document.getElementById("menuToggle");
 
-    menu.style.right = "-250px"; // Ensure it's hidden initially
+    // Ensure menu toggle button is always visible
+    menu.style.right = "-250px"; // Keep menu hidden initially
+    menuToggle.style.right = "10px"; // Keep the button visible
 
-    menuToggle.addEventListener("click", function () {
-        if (menu.classList.contains("active")) {
-            menu.classList.remove("active");
-        } else {
-            menu.classList.add("active");
-        }
+    menuToggle.addEventListener("mouseover", function () {
+        menu.classList.add("active");
+        menu.style.right = "0"; // Move menu into view when hovering over toggle
     });
 
-    // Close menu when clicking outside
-    document.addEventListener("click", function (event) {
-        if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
-            menu.classList.remove("active");
-        }
+    menu.addEventListener("mouseleave", function () {
+        menu.style.right = "-250px"; // Hide menu when mouse leaves
     });
 });

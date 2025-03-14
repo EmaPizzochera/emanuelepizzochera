@@ -49,12 +49,29 @@ body {
 
 /* Menu Items */
 .menu a {
+  display: block;
+  padding: 15px;
   text-decoration: none;
   color: white;
-  font-size: 18px;
-  display: block;
-  padding: 15px 10px;
-  text-align: left;
+  font-size: 20px;
+}
+
+/* Ensure the toggle button is always visible */
+.menu-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 1001; /* Make sure it stays visible even when menu is hidden */
+}
+
+/* When menu is active, slide in */
+.menu.active {
+  right: 0;
+  transition: right 0.3s ease-in-out;
 }
 
 .menu a:hover {
