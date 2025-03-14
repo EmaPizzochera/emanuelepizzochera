@@ -1,22 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("menu.html") // Load the menu
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("menu-container").innerHTML = data;
+    const menuToggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("menu");
 
-            // Add event listener for menu toggle
-            document.getElementById("menuToggle").addEventListener("click", function () {
-                document.getElementById("menu").classList.toggle("active");
-            });
+    menu.style.right = "-250px"; // Ensure it's hidden initially
 
-            // Close menu when clicking outside
-            document.addEventListener("click", function (event) {
-                const menu = document.getElementById("menu");
-                const menuToggle = document.getElementById("menuToggle");
+    menuToggle.addEventListener("click", function () {
+        if (menu.classList.contains("active")) {
+            menu.classList.remove("active");
+        } else {
+            menu.classList.add("active");
+        }
+    });
 
-                if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
-                    menu.classList.remove("active");
-                }
-            });
-        });
+    // Close menu when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+            menu.classList.remove("active");
+        }
+    });
 });

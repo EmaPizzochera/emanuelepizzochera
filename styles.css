@@ -31,19 +31,20 @@ body {
 .menu {
   position: fixed;
   top: 0;
-  right: -200px; /* Initially hidden */
-  width: 200px;
-  height: 100vh;
-  background: #222;
-  transition: right 0.3s ease-in-out;
+  right: -250px; /* Move it completely out of view */
+  width: 250px;
+  height: 100%;
+  background-color: black;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 20px;
+  transition: right 0.3s ease-in-out; /* Animate sliding */
 }
 
+/* Show menu when active */
 .menu.active {
-  right: 0; /* Slide in */
+  right: 0;
 }
 
 /* Menu Items */
