@@ -2,16 +2,34 @@ document.addEventListener("DOMContentLoaded", function () {
     const menu = document.getElementById("menu");
     const menuToggle = document.getElementById("menuToggle");
 
-    // Ensure menu toggle button is always visible
-    menu.style.right = "-250px"; // Keep menu hidden initially
-    menuToggle.style.right = "10px"; // Keep the button visible
+    menuToggle.addEventListener("click", function () {
+        if (menu.classList.contains("active")) {
+            menu.classList.remove("active");
+        } else {
+            menu.classList.add("active");
 
-    menuToggle.addEventListener("mouseover", function () {
-        menu.classList.add("active");
-        menu.style.right = "0"; // Move menu into view when hovering over toggle
+            // Reveal links with animation when menu opens
+            setTimeout(() => {
+                document.querySelectorAll(".menu a").forEach((link, index) => {
+                    setTimeout(() => {
+                        link.style.opacity = "1";
+                        link.style.transform = "translateX(0)";
+                    }, 100 * index); // Adds delay effect for each item
+                });
+            }, 100);
+        }
     });
 
-    menu.addEventListener("mouseleave", function () {
-        menu.style.right = "-250px"; // Hide menu when mouse leaves
+    // Close menu when clicking outside of menu
+    document.addEventListener("click", function (event) {
+        if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+            menu.classList.remove("active");
+
+            // Hide links immediately when menu closes
+            document.querySelectorAll(".menu a").forEach((link) => {
+                link.style.opacity = "0";
+                link.style.transform = "translateX(20px)";
+            });
+        }
     });
 });
