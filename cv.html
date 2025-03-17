@@ -3,23 +3,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
-    <link rel="stylesheet" href="styles.css"> <!--import styles.css sheet-->
-    <style>@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");</style> <!--Lato-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" > <!-- required for email icon-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .cv-container {
+            text-align: left;
+        }
+        .cv-section h3::before {
+            content: "■ ";
+            color: black;
+        }
+    </style>
 </head>
 <body>
-    <div id="menu-container"></div>
-    <h1>Curriculum Vitae</h1>
-    <div>
-    <!--<a href="https://emapizzochera.github.io/emanuelepizzochera/assets/CV_Pizzochera.pdf" target="_blank">PDF.></a>-->
-    <object width="1000" height="1400" type="application/pdf" data="https://emapizzochera.github.io/emanuelepizzochera/assets/CV_Pizzochera.pdf">
-    </object>
+    <div class="cv-container">
+        <h1>Curriculum Vitae</h1>
+        
+        <section class="cv-section">
+            <h2>Education</h2>
+            <div class="cv-item">
+                <div class="cv-bullet"></div>
+                <div class="cv-content">
+                    <h3>MSc in Economics and Econometrics</h3>
+                    <p>2021 - 2023 | University of Bologna (Bologna, Italy)</p>
+                </div>
+            </div>
+            <div class="cv-item">
+                <div class="cv-line"></div>
+                <div class="cv-bullet"></div>
+                <div class="cv-content">
+                    <h3>Erasmus Exchange Program</h3>
+                    <p>2023 | Vrije Universiteit Amsterdam (Amsterdam, Netherlands)</p>
+                </div>
+            </div>
+            <div class="cv-item">
+                <div class="cv-line"></div>
+                <div class="cv-bullet"></div>
+                <div class="cv-content">
+                    <h3>BA in Economics and Politics</h3>
+                    <p>2018 - 2021 | University of Milano (Milano, Italy)</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cv-section">
+            <h2>Research experience</h2>
+            <div class="cv-item">
+                <div class="cv-bullet"></div>
+                <div class="cv-content">
+                    <h3>IGIER, Bocconi University - Research Assistant to Prof. Florian Nagler </h3>
+                    <p>Jun. 2023 - Present | Milano, Italy</p>
+                    <ul>
+                        <li>Coordinating financial system analysis</li>
+                        <li>Enhancing security frameworks</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cv-item">
+                <div class="cv-line"></div>
+                <div class="cv-bullet"></div>
+                <div class="cv-content">
+                    <h3>University of Bologna - Research Assistant to Prof. Emanuele Campiglio</h3>
+                    <p>Sep. 2022 - Aug. 2023</p>
+                    <ul>
+                        <li>Produced reports on financial stability</li>
+                        <li>Assisted in risk assessments</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <h2>Other work experience</h2>
+            <div class="cv-item">
+                <div class="cv-bullet"></div>
+                <div class="cv-content">
+                    <h3>European Commission, Representation in Italy </h3>
+                    <p>Jun. 2020 - Nov. 2020 | Milano, Italy</p>
+                    <ul>
+                        <li>Coordinating financial system analysis</li>
+                        <li>Enhancing security frameworks</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </div>
-    <script src="menu.js"></script>
 </body>
 </html>
