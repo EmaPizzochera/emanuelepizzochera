@@ -6,26 +6,40 @@
     <title>CV</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
         .cv-container {
             text-align: left;
             position: relative;
             padding-left: 50px;
+            padding-top: 20px; /* Adjust the top padding to ensure there's space above */
+            height: 100%;
+            box-sizing: border-box;
         }
+
         .cv-section {
             position: relative;
             margin-bottom: 30px;
         }
+
         .cv-section h2 {
             position: relative;
             display: flex;
             align-items: center;
         }
+
         .cv-section h2::before {
             content: "";
             color: black;
             font-size: 1.2em;
             margin-right: 5px;
         }
+
         .cv-line {
             position: absolute;
             left: 7px;
@@ -34,12 +48,14 @@
             background-color: black;
             height: calc(100% - 30px);
         }
+
         .cv-item {
             display: flex;
             align-items: flex-start;
             margin-bottom: 20px;
             position: relative;
         }
+
         .cv-bullet {
             width: 10px;
             height: 10px;
@@ -49,19 +65,23 @@
             top: 18px;
             border-radius: 2px;
         }
+
         .cv-content {
             margin-left: 20px;
             display: flex;
             flex-direction: column;
         }
+
         .cv-content h3 {
             margin-bottom: 5px;
         }
+
         .cv-content ul {
             margin-top: 0px;
             margin-left: 0px;
             padding-left: 15px;
         }
+
         .cv-content ul li {
             margin-bottom: 3px;
         }
@@ -114,7 +134,7 @@
                     <p>Sep. 2023 - Aug. 2024 (Milano, Italy)</p>
                     <ul>
                         <li>Main projects: "Non-traded assets in OTC markets" and "The capital structure of development banks"</li>
-                        <li>Used financial databases to created and update datasets</li>
+                        <li>Used financial databases to create and update datasets</li>
                         <li>Performed EDA and econometric analysis</li>
                     </ul>
                 </div>
