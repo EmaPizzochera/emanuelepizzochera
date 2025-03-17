@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,10 +8,36 @@
     <style>
         .cv-container {
             text-align: left;
+            position: relative;
+            padding-left: 30px;
         }
-        .cv-section h3::before {
-            content: "■ ";
-            color: black;
+        .cv-section {
+            position: relative;
+        }
+        .cv-line {
+            position: absolute;
+            left: 10px;
+            top: 0;
+            width: 2px;
+            background-color: #222;
+            height: 100%;
+        }
+        .cv-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .cv-bullet {
+            width: 10px;
+            height: 10px;
+            background-color: #222;
+            position: relative;
+            left: 6px;
+            border-radius: 2px;
+        }
+        .cv-content {
+            margin-left: 20px;
         }
     </style>
 </head>
@@ -20,38 +47,41 @@
         
         <section class="cv-section">
             <h2>Education</h2>
+            <div class="cv-line"></div>
             <div class="cv-item">
                 <div class="cv-bullet"></div>
                 <div class="cv-content">
-                    <h3>MSc in Economics and Econometrics</h3>
-                    <p>2021 - 2023 | University of Bologna (Bologna, Italy)</p>
+                    <h3>MSc in Economics</h3>
+                    <p>2020 - 2022 | University of Bologna</p>
                 </div>
             </div>
             <div class="cv-item">
                 <div class="cv-line"></div>
                 <div class="cv-bullet"></div>
                 <div class="cv-content">
-                    <h3>Erasmus Exchange Program</h3>
-                    <p>2023 | Vrije Universiteit Amsterdam (Amsterdam, Netherlands)</p>
+                    <h3>Exchange Program</h3>
+                    <p>2020 | Warwick University</p>
                 </div>
             </div>
             <div class="cv-item">
                 <div class="cv-line"></div>
                 <div class="cv-bullet"></div>
                 <div class="cv-content">
-                    <h3>BA in Economics and Politics</h3>
-                    <p>2018 - 2021 | University of Milano (Milano, Italy)</p>
+                    <h3>BSc in Economics</h3>
+                    <p>2017 - 2020 | Bocconi University</p>
                 </div>
             </div>
         </section>
         
         <section class="cv-section">
-            <h2>Research experience</h2>
+            <h2>Experience</h2>
+            
             <div class="cv-item">
+                <div class="cv-line"></div>
                 <div class="cv-bullet"></div>
                 <div class="cv-content">
-                    <h3>IGIER, Bocconi University - Research Assistant to Prof. Florian Nagler </h3>
-                    <p>Jun. 2023 - Present | Milano, Italy</p>
+                    <h3>European Central Bank</h3>
+                    <p>Sep. 2023 - Present</p>
                     <ul>
                         <li>Coordinating financial system analysis</li>
                         <li>Enhancing security frameworks</li>
@@ -62,26 +92,11 @@
                 <div class="cv-line"></div>
                 <div class="cv-bullet"></div>
                 <div class="cv-content">
-                    <h3>University of Bologna - Research Assistant to Prof. Emanuele Campiglio</h3>
+                    <h3>European Central Bank</h3>
                     <p>Sep. 2022 - Aug. 2023</p>
                     <ul>
                         <li>Produced reports on financial stability</li>
                         <li>Assisted in risk assessments</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="cv-section">
-            <h2>Other work experience</h2>
-            <div class="cv-item">
-                <div class="cv-bullet"></div>
-                <div class="cv-content">
-                    <h3>European Commission, Representation in Italy </h3>
-                    <p>Jun. 2020 - Nov. 2020 | Milano, Italy</p>
-                    <ul>
-                        <li>Coordinating financial system analysis</li>
-                        <li>Enhancing security frameworks</li>
                     </ul>
                 </div>
             </div>
