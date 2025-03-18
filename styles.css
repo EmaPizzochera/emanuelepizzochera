@@ -13,20 +13,6 @@ body {
   height: 100vh;
 }
 
-/* Navigation Bar */
-.navbar {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  z-index: 1000;
-  font-size: 24px;
-  background: #222;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
-}
-
 /* Slide-in Menu */
 .menu {
   position: fixed;
