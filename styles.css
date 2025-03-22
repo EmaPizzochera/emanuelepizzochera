@@ -31,7 +31,7 @@ body {
 .menu {
   position: fixed;
   top: 0;
-  right: -200px; /* Initially hidden */
+  right: -220px; /* Initially hidden */
   width: 200px;
   height: 100vh;
   background: #222;
