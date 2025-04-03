@@ -31,7 +31,7 @@ body {
 .menu {
   position: fixed;
   top: 0;
-  right: -250px; /* Initially hidden */
+  right: -160px; /* Partially visible (40px slice) */
   width: 200px;
   height: 100vh;
   background: #222;
@@ -44,6 +44,27 @@ body {
 
 .menu.active {
   right: 0; /* Slide in */
+}
+
+/* Toggle Button Styling */
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  right: 0; /* Align with visible part of the menu */
+  width: 40px;
+  height: 40px;
+  background: #222;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 1100;
+  border-radius: 5px 0 0 5px; /* Rounded left side */
+}
+
+/* Ensures button stays on top of menu when closed */
+.menu-toggle:hover {
+  background: #444;
 }
 
 /* Menu Items */

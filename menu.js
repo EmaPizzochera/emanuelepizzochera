@@ -1,22 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("menu.html") // Load the menu
+    fetch("menu.html")
         .then(response => response.text())
         .then(data => {
-            document.getElementById("menu-container").innerHTML = data;
+            const menuContainer = document.getElementById("menu-container");
+            if (!menuContainer) return;
+            
+            menuContainer.innerHTML = data;
 
-            // Add event listener for menu toggle
-            document.getElementById("menuToggle").addEventListener("click", function () {
-                document.getElementById("menu").classList.toggle("active");
+            const menu = document.getElementById("menu");
+            const menuToggle = document.getElementById("menuToggle");
+
+            if (!menu || !menuToggle) return;
+
+            // Toggle menu on button click
+            menuToggle.addEventListener("click", function (event) {
+                event.stopPropagation();
+                menu.classList.toggle("active");
             });
 
             // Close menu when clicking outside
             document.addEventListener("click", function (event) {
-                const menu = document.getElementById("menu");
-                const menuToggle = document.getElementById("menuToggle");
-
                 if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
                     menu.classList.remove("active");
                 }
             });
-        });
+        })
+        .catch(error => console.error("Error loading menu:", error));
 });
