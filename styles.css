@@ -31,7 +31,7 @@ body {
 .menu {
   position: fixed;
   top: 0;
-  right: -160px; /* Partially visible (40px slice) */
+  right: -140px; /* Partially visible (60px slice) */
   width: 200px;
   height: 100vh;
   background: #222;
