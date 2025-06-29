@@ -39,17 +39,52 @@ body {
 
 /* Layout Container */
 .container {
-  display: flex;
   max-width: 960px;
   margin: 2rem auto;
   padding: 0 1rem;
+  flex: 1;
+}
+
+
+/* Header */
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.2rem;
+}
+
+/* Two-column layout */
+.bio-section {
+  display: flex;
   gap: 2rem;
+  align-items: flex-start;
   flex-wrap: wrap;
+}
+
+/* Left: image + contact */
+.photo-column {
+  flex: 0 0 auto;
+  width: 180px;
+  text-align: left;
+}
+
+.profile-img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.contact-info {
+  font-size: 0.9rem;
+  color: #222;
 }
 
 /* Text Section */
 .text-column {
-  flex: 2;
+  flex: 1;
   min-width: 280px;
 }
 
@@ -58,38 +93,23 @@ body {
   margin-bottom: 0.2rem;
 }
 
+.text-column p {
+  margin-bottom: 1.2rem;
+}
+
 .subtitle {
   color: #666;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
 .text-column a {
-  color: #800080;
+  color: #0099cc;
   text-decoration: none;
 }
 
 .text-column a:hover {
   text-decoration: underline;
-}
-
-/* Photo Section */
-.photo-column {
-  flex: 1;
-  min-width: 250px;
-  text-align: center;
-}
-
-.profile-img {
-  max-width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.contact-info {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #222;
 }
 
 /* Footer */
