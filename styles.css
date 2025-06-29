@@ -69,28 +69,33 @@ html, body {
 /* Bio Section: Two-column layout */
 .bio-section {
   display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
+  flex-direction: row;
   align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: nowrap;
 }
 
+
 /* Photo column (left) */
+/* Limit the image size */
 .photo-column {
-  flex: 1;
-  min-width: 250px;
+  flex: 0 0 auto;
+  width: 160px; /* Fixed width */
 }
 
 .profile-img {
   width: 100%;
-  max-width: 300px;
+  height: auto;
+  max-height: 200px; /* Prevent from being too tall */
   border-radius: 12px;
+  object-fit: cover;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Text column (right) */
+/* Let text use remaining space */
 .text-column {
-  flex: 2;
-  min-width: 280px;
+  flex: 1;
+  min-width: 0;
 }
 
 .text-column p {
