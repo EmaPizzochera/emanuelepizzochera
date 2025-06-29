@@ -1,10 +1,19 @@
-/* Base Styles */
-body {
+/* Base Setup */
+html, body {
+  height: 100%;
   margin: 0;
+  padding: 0;
   font-family: 'Inter', sans-serif;
   color: #111;
   background: #fff;
   line-height: 1.6;
+}
+
+/* Sticky Footer Layout Wrapper */
+.site-wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Navigation Bar */
@@ -37,7 +46,7 @@ body {
   color: #800080; /* Purple accent */
 }
 
-/* Layout Container */
+/* Main Container */
 .container {
   max-width: 960px;
   margin: 2rem auto;
@@ -45,62 +54,48 @@ body {
   flex: 1;
 }
 
-
-/* Header */
-.page-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.2rem;
-}
-
-/* Two-column layout */
+/* Two-column layout: Photo left, text right */
 .bio-section {
   display: flex;
+  flex-direction: row;
   gap: 2rem;
   align-items: flex-start;
   flex-wrap: wrap;
 }
 
-/* Left: image + contact */
+/* Left column: Photo */
 .photo-column {
   flex: 0 0 auto;
-  width: 180px;
-  text-align: left;
+  width: 140px;
 }
 
 .profile-img {
   width: 100%;
   height: auto;
-  max-height: 200px;
   border-radius: 12px;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
 }
 
-.contact-info {
-  font-size: 0.9rem;
-  color: #222;
-}
-
-/* Text Section */
+/* Right column: Name, subtitle, text */
 .text-column {
   flex: 1;
   min-width: 280px;
 }
 
 .text-column h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.2rem;
-}
-
-.text-column p {
-  margin-bottom: 1.2rem;
+  font-size: 2.2rem;
+  margin: 0 0 0.2rem;
 }
 
 .subtitle {
   color: #666;
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.text-column p {
+  margin-bottom: 1.2rem;
 }
 
 .text-column a {
@@ -118,4 +113,23 @@ footer {
   padding: 2rem;
   font-size: 0.9rem;
   color: #aaa;
+  margin-top: auto;
+}
+
+/* Responsive layout (optional) */
+@media (max-width: 600px) {
+  .bio-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+
+  .photo-column {
+    width: 100%;
+    max-width: 160px;
+  }
+
+  .text-column {
+    width: 100%;
+  }
 }
