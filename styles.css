@@ -1,19 +1,10 @@
-/* Base Setup */
-html, body {
-  height: 100%;
+/* Base Styles */
+body {
   margin: 0;
-  padding: 0;
   font-family: 'Inter', sans-serif;
   color: #111;
   background: #fff;
   line-height: 1.6;
-}
-
-/* Sticky Footer Layout Wrapper */
-.site-wrapper {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 /* Navigation Bar */
@@ -46,64 +37,35 @@ html, body {
   color: #800080; /* Purple accent */
 }
 
-/* Main Container */
+/* Layout Container */
 .container {
+  display: flex;
   max-width: 960px;
   margin: 2rem auto;
   padding: 0 1rem;
-  flex: 1;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-/* Header: Name and subtitle */
-.header h1 {
+/* Text Section */
+.text-column {
+  flex: 2;
+  min-width: 280px;
+}
+
+.text-column h1 {
   font-size: 2.5rem;
   margin-bottom: 0.2rem;
 }
 
 .subtitle {
   color: #666;
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-/* Bio Section: Two-column layout */
-.bio-section {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 2rem;
-  flex-wrap: nowrap;
-}
-
-
-/* Photo column (left) */
-/* Limit the image size */
-.photo-column {
-  flex: 0 0 auto;
-  width: 160px; /* Fixed width */
-}
-
-.profile-img {
-  width: 100%;
-  height: auto;
-  max-height: 200px; /* Prevent from being too tall */
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Let text use remaining space */
-.text-column {
-  flex: 1;
-  min-width: 0;
-}
-
-.text-column p {
-  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
 }
 
 .text-column a {
-  color: #0099cc;
+  color: #800080;
   text-decoration: none;
 }
 
@@ -111,9 +73,23 @@ html, body {
   text-decoration: underline;
 }
 
-.highlight-link {
-  color: #0099cc;
-  font-weight: 500;
+/* Photo Section */
+.photo-column {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+}
+
+.profile-img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-info {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #222;
 }
 
 /* Footer */
@@ -122,5 +98,4 @@ footer {
   padding: 2rem;
   font-size: 0.9rem;
   color: #aaa;
-  margin-top: auto; /* Important for sticky footer */
 }
