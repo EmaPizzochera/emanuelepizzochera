@@ -46,36 +46,59 @@ html, body {
   color: #800080; /* Purple accent */
 }
 
-/* Content Container */
+/* Main Container */
 .container {
-  flex: 1;
-  display: flex;
   max-width: 960px;
   margin: 2rem auto;
   padding: 0 1rem;
-  gap: 2rem;
-  flex-wrap: wrap;
+  flex: 1;
 }
 
-/* Text Section */
-.text-column {
-  flex: 2;
-  min-width: 280px;
-}
-
-.text-column h1 {
+/* Header: Name and subtitle */
+.header h1 {
   font-size: 2.5rem;
   margin-bottom: 0.2rem;
 }
 
 .subtitle {
   color: #666;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Bio Section: Two-column layout */
+.bio-section {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* Photo column (left) */
+.photo-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+.profile-img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Text column (right) */
+.text-column {
+  flex: 2;
+  min-width: 280px;
+}
+
+.text-column p {
+  margin-bottom: 1.2rem;
 }
 
 .text-column a {
-  color: #800080;
+  color: #0099cc;
   text-decoration: none;
 }
 
@@ -83,23 +106,9 @@ html, body {
   text-decoration: underline;
 }
 
-/* Photo Section */
-.photo-column {
-  flex: 1;
-  min-width: 250px;
-  text-align: center;
-}
-
-.profile-img {
-  max-width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.contact-info {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #222;
+.highlight-link {
+  color: #0099cc;
+  font-weight: 500;
 }
 
 /* Footer */
@@ -108,5 +117,5 @@ footer {
   padding: 2rem;
   font-size: 0.9rem;
   color: #aaa;
-  margin-top: auto; /* Key for sticky footer */
+  margin-top: auto; /* Important for sticky footer */
 }
