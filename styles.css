@@ -251,9 +251,11 @@ footer a {
     }
 
     .profile-image {
-        width: 180px;
-        height: 220px;
+        width: 90px;
+        height: 110px;
         margin: 0 auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .hero-section h1 {
