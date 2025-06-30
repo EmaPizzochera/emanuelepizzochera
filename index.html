@@ -1,47 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emanuele Francesco Pizzochera</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emanuele Pizzochera</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#about" class="active">about</a></li>
-                <li><a href="#cv">cv</a></li>
-                <li><a href="#teaching">teaching</a></li>
-                <li><a href="#research">research</a></li>
-                <li><button class="theme-toggle" onclick="toggleTheme()">🌙</button></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <div class="container">
-            <section class="hero-section">
-                <h1><span class="first-name">Emanuele Francesco</span> <span class="last-name">Pizzochera</span></h1>
-                <div class="hero-content">
-                    <div class="profile-image">
-                        <img src="assets/Webpropic.jpg" alt="Emanuele Pizzochera" class="profile-img" />
-                    </div>
-                    <div class="hero-text">
-                        <p>Ciao! I am a Finance Ph.D. student at <a href="https://www.unibocconi.eu/" class="bocconi-link">Bocconi University</a>, where I've also worked with the <a href="https://igier.unibocconi.eu/" class="igier-link">IGIER Institute</a> and Department of Finance.</p>
-                        <p>I hold a M.Sc. in Economics and Econometrics (LMEC) from the University of Bologna (2023) and a B.Sc. in Politics and Economics from the University of Milano (2021).</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
+  <nav class="navbar">
+    <ul>
+      <li><a class="active" href="#">about</a></li>
+      <li><a href="#">blog</a></li>
+      <li><a href="#">publications</a></li>
+      <li><a href="#">projects</a></li>
+      <li><a href="#">repositories</a></li>
+      <li><a href="#">cv</a></li>
+      <li><a href="#">teaching</a></li>
+      <li><a href="#">people</a></li>
+      <li><a href="#">submenus ▾</a></li>
+    </ul>
+  </nav>
 
-    <footer>
-        <div class="container">
-            <p>&copy; Copyright 2025 Emanuele Francesco Pizzochera. Inspired to the <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.</p>
-        </div>
-    </footer>
+  <main class="container">
+    <div class="text-column">
+      <h1><strong>Emanuele</strong> Pizzochera</h1>
+      <p class="subtitle">PhD Student. Researcher. Economist.</p>
+      <p>
+        Welcome to my website! I’m a Finance PhD student at 
+        <a href="https://www.unibocconi.eu" target="_blank">Università Bocconi</a>,
+        where I’ve also worked with the 
+        <a href="https://igier.unibocconi.eu" target="_blank">IGIER Institute</a> and Department of Finance.
+      </p>
+      <p>
+        I hold a Master’s Degree in Economics and Econometrics from the University of Bologna (2023), and a Bachelor’s in Politics & Economics from the University of Milano (2021).
+      </p>
+    </div>
+    <div class="photo-column">
+      <img src="assets/Webpropic.jpg" alt="Emanuele Pizzochera" class="profile-img" />
+      <p class="contact-info">
+        Università Bocconi<br />
+        Via Sarfatti 25<br />
+        Milan, Italy
+      </p>
+    </div>
+  </main>
 
-    <script src="script.js"></script>
+  <footer>
+    © 2025 Emanuele Francesco Pizzochera.
+  </footer>
+
 </body>
 </html>
