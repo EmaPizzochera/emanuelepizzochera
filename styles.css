@@ -202,8 +202,8 @@ footer a:hover {
 
 /* ==== Global link reset & center-origin underline ==== */
 a {
-  /* make all links match your main text color */
-  color: var(--text-color) !important;
+  /* slightly lighter than body text so links stand out */
+  color: var(--text-secondary) !important;
   text-decoration: none;
   position: relative;
   overflow: hidden;
@@ -213,21 +213,21 @@ a {
 a::after {
   content: '';
   position: absolute;
-  bottom: 0;               /* sits at the text baseline */
-  left: 50%;               /* start exactly in the middle */
-  width: 0;                /* hidden by default */
-  height: 2px;             /* underline thickness */
-  background: var(--text-color);
+  bottom: 0;                
+  left: 50%;                
+  width: 0;                 
+  height: 2px;              
+  /* match link color */
+  background: currentColor;
   transition: width 0.3s ease;
-  transform: translateX(-50%); /* keep centered as it grows */
+  transform: translateX(-50%);
 }
 
 a:hover {
-  /* in case you want the link itself to change color on hover */
-  color: var(--text-color);
+  /* keep same grey on hover; underline indicates interactivity */
+  color: var(--text-secondary);
 }
 
 a:hover::after {
-  /* expand underline from center to full width */
   width: 100%;
 }
