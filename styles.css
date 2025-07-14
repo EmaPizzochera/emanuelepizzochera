@@ -101,6 +101,9 @@ body {
   justify-content: center;
   transition: all 0.3s ease;
   margin-left: 1rem;
+
+  /* new: make the icon match your text color in both modes */
+  color: var(--text-color);
 }
 
 .theme-toggle:hover {
