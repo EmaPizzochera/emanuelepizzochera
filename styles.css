@@ -230,3 +230,16 @@ a:hover {
 a:hover::after {
   width: 100%;
 }
+
+/* ==== Override nav links back to main text color ==== */
+.navbar a,
+.navbar a:link,
+.navbar a:visited {
+  color: var(--text-color) !important;
+}
+
+/* keep hover the same black too */
+.navbar a:hover,
+.navbar a:hover::after {
+  color: var(--text-color) !important;
+}

@@ -5,11 +5,11 @@ function toggleTheme() {
   
   if (body.getAttribute('data-theme') === 'dark') {
     body.removeAttribute('data-theme');
-    themeToggle.textContent = '🌙';
+    themeToggle.textContent = '☽';    // was ☾
     localStorage.setItem('theme', 'light');
   } else {
     body.setAttribute('data-theme', 'dark');
-    themeToggle.textContent = '☀️';
+    themeToggle.textContent = '☼';
     localStorage.setItem('theme', 'dark');
   }
 }
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   if (savedTheme === 'dark') {
     document.body.setAttribute('data-theme', 'dark');
-    themeToggle.textContent = '☀️';
+    themeToggle.textContent = '☼';
   }
 });
 
