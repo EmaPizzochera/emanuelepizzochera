@@ -140,16 +140,6 @@ body {
   margin-bottom: 1rem;
 }
 
-.text-column a {
-  color: var(--accent-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.text-column a:hover {
-  text-decoration: underline;
-}
-
 /* Photo Section */
 .photo-column {
   flex: 1;
@@ -208,4 +198,36 @@ footer a:hover {
   .text-column h1 {
     font-size: 2rem;
   }
+}
+
+/* ==== Global link reset & center-origin underline ==== */
+a {
+  /* make all links match your main text color */
+  color: var(--text-color) !important;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;               /* sits at the text baseline */
+  left: 50%;               /* start exactly in the middle */
+  width: 0;                /* hidden by default */
+  height: 2px;             /* underline thickness */
+  background: var(--text-color);
+  transition: width 0.3s ease;
+  transform: translateX(-50%); /* keep centered as it grows */
+}
+
+a:hover {
+  /* in case you want the link itself to change color on hover */
+  color: var(--text-color);
+}
+
+a:hover::after {
+  /* expand underline from center to full width */
+  width: 100%;
 }
