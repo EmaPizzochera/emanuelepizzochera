@@ -200,10 +200,33 @@ footer a:hover {
   }
 }
 
-/* ==== Global link styling: black with static underline ==== */
+/* ==== Global link reset & center-origin underline (lighter grey) ==== */
 a {
-  /* force all links to be main text color */
-  color: var(--text-color) !important;
-  /* always underlined, no animation */
-  text-decoration: underline;
+  /* lighter grey so links stand out */
+  color: var(--text-muted) !important;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;                
+  left: 50%;                
+  width: 0;                 
+  height: 2px;              
+  background: currentColor;
+  transition: width 0.3s ease;
+  transform: translateX(-50%);
+}
+
+a:hover {
+  /* keep same grey on hover */
+  color: var(--text-muted) !important;
+}
+
+a:hover::after {
+  width: 100%;
 }
