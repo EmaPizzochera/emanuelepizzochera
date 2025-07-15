@@ -87,10 +87,10 @@ body {
   width: 100%;
 }
 
-/* Theme Toggle Button */
+/* Theme Toggle Button – ring‐draw on hover */
 .theme-toggle {
   background: none;
-  border: 2px solid var(--border-color);
+  border: none;               /* remove static border */
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -99,20 +99,46 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
   margin-left: 1rem;
-
-  /* new: make the icon match your text color in both modes */
-  color: var(--text-color);
+  color: var(--text-color);   /* icon and ring inherit text color */
+  position: relative;         /* for the SVG ring */
+  overflow: visible;          /* allow ring to draw outside */
 }
 
+/* tiny scale‐up on hover (optional) */
 .theme-toggle:hover {
-  border-color: var(--accent-color);
   transform: scale(1.1);
 }
 
+/* tiny scale‐down on active press */
 .theme-toggle:active {
   transform: scale(0.95);
+}
+
+/* position the SVG ring behind the icon */
+.theme-toggle .hover-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+}
+
+/* prepare the ring to be “drawn” */
+.theme-toggle .hover-ring circle {
+  fill: none;
+  stroke: currentColor;      /* same as icon */
+  stroke-width: 2;
+  stroke-dasharray: 126;     /* ≈2π·20 */
+  stroke-dashoffset: 126;    /* hidden initially */
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+/* on hover, animate dashoffset → 0 (clockwise draw) */
+.theme-toggle:hover .hover-ring circle {
+  stroke-dashoffset: 0;
 }
 
 /* Layout Container */
@@ -247,33 +273,3 @@ a:hover::after {
   color: var(--text-color) !important;
 }
 
-/* ==== Theme-toggle hover-ring animation ==== */
-.theme-toggle {
-  position: relative;
-  overflow: visible; /* allow SVG to show */
-}
-
-/* position the SVG exactly behind the icon */
-.theme-toggle .hover-ring {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 42px;
-  height: 42px;
-  pointer-events: none; /* so clicks pass through */
-}
-
-/* prepare the circle for a "draw-on" animation */
-.theme-toggle .hover-ring circle {
-  fill: none;
-  stroke: currentColor;         /* same color as icon */
-  stroke-width: 2;
-  stroke-dasharray: 126;        /* ~2π·20 */
-  stroke-dashoffset: 126;       /* hidden at 100% offset */
-  transition: stroke-dashoffset 0.5s ease;
-}
-
-/* on hover, animate dashoffset → 0 (draw clockwise) */
-.theme-toggle:hover .hover-ring circle {
-  stroke-dashoffset: 0;
-}
