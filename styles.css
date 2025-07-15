@@ -246,3 +246,34 @@ a:hover::after {
 .navbar a:hover::after {
   color: var(--text-color) !important;
 }
+
+/* ==== Theme-toggle hover-ring animation ==== */
+.theme-toggle {
+  position: relative;
+  overflow: visible; /* allow SVG to show */
+}
+
+/* position the SVG exactly behind the icon */
+.theme-toggle .hover-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 42px;
+  height: 42px;
+  pointer-events: none; /* so clicks pass through */
+}
+
+/* prepare the circle for a "draw-on" animation */
+.theme-toggle .hover-ring circle {
+  fill: none;
+  stroke: currentColor;         /* same color as icon */
+  stroke-width: 2;
+  stroke-dasharray: 126;        /* ~2π·20 */
+  stroke-dashoffset: 126;       /* hidden at 100% offset */
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+/* on hover, animate dashoffset → 0 (draw clockwise) */
+.theme-toggle:hover .hover-ring circle {
+  stroke-dashoffset: 0;
+}
