@@ -300,16 +300,34 @@ a:hover::after {
   margin-bottom: 2rem;
 }
 
+/* Download link styled like text, with center-origin underline */
 .download-btn {
   display: inline-block;
-  padding: 0.5rem 1rem;
-  background: var(--accent-color);
-  color: #fff;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background 0.3s ease;
+  background: none;              /* no purple box */
+  color: var(--text-color);      /* match body text (black/white) */
+  text-decoration: none;         /* hide default underline */
+  position: relative;            /* for the pseudo-element */
+  overflow: hidden;
+  padding: 0.5rem 1rem;          /* preserve spacing */
+  transition: color 0.3s ease;
+}
+
+.download-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;                     
+  left: 50%;                     
+  width: 0;                      
+  height: 2px;                   
+  background: currentColor;      /* same as link text */
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
 }
 
 .download-btn:hover {
-  opacity: 0.9;
+  color: var(--text-color);      /* ensure it stays the same color */
+}
+
+.download-btn:hover::after {
+  width: 100%;                   /* grow underline from center */
 }
