@@ -1,14 +1,39 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Emanuele Pizzochera</title>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-pb/M3eYfq9J3rCh7Zr6J9rZxMwztylQ/WfnMoV9awtKPMxIzGMPYTW8wYhMz4+hV8+l7XcVVO6YzlDEfMy+E2g=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<link rel="stylesheet" href="styles.css" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
 </head>
 <body>
-  <!-- Navigation -->
-  <div id="menu-container"></div>
+<nav class="navbar">
+<ul>
+<li><a class="active" href="index.html">about</a></li>
+<li><a href="cv.html">cv</a></li>
+<li><a href="#">research</a></li>
+<li><a href="#">teaching</a></li>
+<li>
+  <button class="theme-toggle" aria-label="Toggle theme">
+    <svg class="hover-ring" viewBox="0 0 42 42" aria-hidden="true">
+      <circle cx="21" cy="21" r="20" />
+    </svg>
+    <i class="fas fa-moon"></i>
+  </button>
+</li>
+</ul>
+</nav>
 
   <!-- CV PDF Embed and Download -->
   <main class="cv-container">
@@ -20,11 +45,10 @@
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    © 2025 Emanuele Francesco Pizzochera. Inspired by the <a href="https://github.com/alshedivat/al-folio" target="_blank">al-folio</a> theme.
-  </footer>
+<footer>
+ © 2025 Emanuele Francesco Pizzochera. Inspired by the <a href="https://github.com/alshedivat/al-folio" target="_blank">al-folio</a> theme.
+</footer>
 
-  <script src="menu.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
