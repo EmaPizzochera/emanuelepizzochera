@@ -194,7 +194,7 @@ footer {
   text-align: center;
   padding: 2rem;
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 footer a {
