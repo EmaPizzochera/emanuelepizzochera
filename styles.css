@@ -304,7 +304,7 @@ a:hover::after {
 .download-btn {
   display: inline-block;
   background: none;              /* no purple box */
-  color: var(--text-color);      /* match body text (black/white) */
+  color: var(--text-color) !important;      /* match body text (black/white) */
   text-decoration: none;         /* hide default underline */
   position: relative;            /* for the pseudo-element */
   overflow: hidden;
@@ -325,7 +325,7 @@ a:hover::after {
 }
 
 .download-btn:hover {
-  color: var(--text-color);      /* ensure it stays the same color */
+  color: var(--text-color) !important;      /* ensure it stays the same color */
 }
 
 .download-btn:hover::after {
