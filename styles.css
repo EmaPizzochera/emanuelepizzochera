@@ -1,6 +1,6 @@
 /* CSS Custom Properties for Theme Colors */
 :root {
-  --bg-color: #fff;
+  --bg-color: #faf7f0;
   --text-color: #111;
   --text-secondary: #666;
   --text-tertiary: #222;
@@ -16,7 +16,7 @@
   --text-color: #e6edf3;
   --text-secondary: #8b949e;
   --text-tertiary: #c9d1d9;
-  --text-muted: #F7965A;
+  --text-muted: hsl(23, 91%, 66%);
   --border-color: #30363d;
   --accent-color: #a855f7;
   --nav-bg: #0d1117;
