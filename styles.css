@@ -446,7 +446,7 @@ a:hover::after {
 .social-links a:link,
 .social-links a:visited {
   color: var(--text-color) !important;
-  font-size: 1.25rem;
+  font-size: 1.6rem;
   display: inline-flex;
   align-items: center;
   overflow: visible;
