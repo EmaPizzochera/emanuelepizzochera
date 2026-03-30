@@ -331,3 +331,149 @@ a:hover::after {
 .download-btn:hover::after {
   width: 100%;                   /* grow underline from center */
 }
+
+
+
+
+/* ===== Contact section ===== */
+.contact-section {
+  max-width: 960px;
+  margin: 0 auto 2rem;
+  padding: 0 1rem;
+}
+
+.contact-dropdown {
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+}
+
+.contact-dropdown summary {
+  list-style: none;
+}
+
+.contact-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.contact-toggle {
+  display: inline-block;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  font-weight: 400;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0.2rem;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.contact-toggle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.contact-toggle:hover {
+  color: var(--text-muted);
+}
+
+.contact-toggle:hover::after {
+  width: 100%;
+}
+
+.contact-toggle:focus-visible {
+  outline: 2px solid var(--text-muted);
+  outline-offset: 4px;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  margin-top: 0;
+  transition: grid-template-rows 0.35s ease, opacity 0.35s ease, margin-top 0.35s ease;
+}
+
+.contact-dropdown[open] .contact-content {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+.contact-panel {
+  overflow: hidden;
+  display: grid;
+  gap: 1.2rem;
+  color: var(--text-tertiary);
+}
+
+.contact-item {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.contact-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.contact-item address {
+  font-style: normal;
+  color: var(--text-color);
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-links a,
+.social-links a:link,
+.social-links a:visited {
+  color: var(--text-color) !important;
+  font-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  overflow: visible;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.social-links a::after {
+  display: none;
+}
+
+.social-links a:hover {
+  color: var(--text-color) !important;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-toggle {
+    font-size: 1rem;
+  }
+}
+
+.contact-item a[href^="mailto:"],
+.contact-item a[href^="mailto:"]:link,
+.contact-item a[href^="mailto:"]:visited,
+.contact-item a[href^="mailto:"]:hover {
+  color: var(--text-color) !important;
+}
+
+.contact-item a[href^="mailto:"]::after {
+  display: none;
+}
