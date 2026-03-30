@@ -53,11 +53,18 @@ I hold a M.Sc. in Economics and Econometrics from the University of Bologna (202
 </main>
 
 <section class="contact-section">
-  <details class="contact-dropdown">
-    <summary class="contact-toggle">Contact me</summary>
+  <div class="contact-dropdown">
+  <button
+    class="contact-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="contact-content"
+  >
+    Contact me
+  </button>
 
-    <div class="contact-content">
-      <div class="contact-panel">
+  <div class="contact-content" id="contact-content">
+    <div class="contact-panel">
         <div class="contact-item">
            <h3><strong>Office address</strong></h3>
           <address>
@@ -75,7 +82,7 @@ I hold a M.Sc. in Economics and Econometrics from the University of Bologna (202
         </div>
 
         <div class="contact-item">
-          <span class="contact-label">Social media</span>
+          <h3><strong>Social media</strong></h3>
           <div class="social-links">
             <a
               href="https://www.linkedin.com/in/emanuele-francesco-pizzochera/"

@@ -60,3 +60,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   window.addEventListener('scroll', updateActiveLink);
 });
+
+const contactToggle = document.querySelector('.contact-toggle');
+const contactDropdown = document.querySelector('.contact-dropdown');
+
+if (contactToggle && contactDropdown) {
+  contactToggle.addEventListener('click', () => {
+    const isOpen = contactDropdown.classList.toggle('open');
+    contactToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+}
