@@ -1,72 +1,51 @@
-// Theme toggle functionality using Font Awesome icons
-function toggleTheme() {
-  const body = document.body;
+function setTheme(theme) {
   const themeToggle = document.querySelector('.theme-toggle');
+  const toggleLabel = theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
 
-  if (body.getAttribute('data-theme') === 'dark') {
-    body.removeAttribute('data-theme');
-    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';  // show moon icon
-    localStorage.setItem('theme', 'light');
-  } else {
-    body.setAttribute('data-theme', 'dark');
-    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';   // show sun icon
+  if (theme === 'dark') {
+    document.body.setAttribute('data-theme', 'dark');
     localStorage.setItem('theme', 'dark');
+  } else {
+    document.body.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'light');
   }
+
+  themeToggle?.setAttribute('aria-label', toggleLabel);
+  themeToggle?.setAttribute('title', toggleLabel);
 }
 
-// Initialize functionality once DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme');
   const themeToggle = document.querySelector('.theme-toggle');
+  const contactToggle = document.querySelector('.contact-toggle');
+  const contactDropdown = document.querySelector('.contact-dropdown');
 
-  // Apply saved theme and set correct icon
-  if (savedTheme === 'dark') {
-    document.body.setAttribute('data-theme', 'dark');
-    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-  } else {
-    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-  }
+  setTheme(savedTheme === 'dark' ? 'dark' : 'light');
 
-  // Attach click handler for theme toggle button
-  themeToggle.addEventListener('click', toggleTheme);
+  themeToggle?.addEventListener('click', () => {
+    const isDark = document.body.getAttribute('data-theme') === 'dark';
+    setTheme(isDark ? 'light' : 'dark');
+  });
 
-  // Smooth scrolling for internal navigation links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+  contactToggle?.addEventListener('click', () => {
+    const isOpen = contactDropdown?.classList.toggle('open') ?? false;
+    contactToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (event) => {
+      const targetId = anchor.getAttribute('href');
+
+      if (!targetId || targetId === '#') {
+        return;
+      }
+
+      const target = document.querySelector(targetId);
+
       if (target) {
+        event.preventDefault();
         target.scrollIntoView({ behavior: 'smooth' });
       }
     });
   });
-
-  // Active navigation link highlighting on scroll
-  const navLinks = document.querySelectorAll('.navbar a:not(.theme-toggle)');
-  const sections = document.querySelectorAll('section[id]');
-
-  function updateActiveLink() {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      if (window.scrollY >= sectionTop - 200) {
-        current = section.getAttribute('id');
-      }
-    });
-    navLinks.forEach(link => {
-      link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
-    });
-  }
-
-  window.addEventListener('scroll', updateActiveLink);
 });
-
-const contactToggle = document.querySelector('.contact-toggle');
-const contactDropdown = document.querySelector('.contact-dropdown');
-
-if (contactToggle && contactDropdown) {
-  contactToggle.addEventListener('click', () => {
-    const isOpen = contactDropdown.classList.toggle('open');
-    contactToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
-}

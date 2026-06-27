@@ -1,9 +1,9 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Emanuele Pizzochera</title>
+<title>CV | Emanuele Pizzochera</title>
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -12,41 +12,38 @@
   referrerpolicy="no-referrer"
 />
 <link rel="stylesheet" href="styles.css" />
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
 </head>
 <body>
-<nav class="navbar">
-<ul>
-<li><a class="active" href="index.html">about</a></li>
-<li><a href="cv.html">cv</a></li>
-<li><a href="#">research</a></li>
-<li><a href="teaching.html">teaching</a></li>
-<li>
-  <button class="theme-toggle" aria-label="Toggle theme">
-    <svg class="hover-ring" viewBox="0 0 42 42" aria-hidden="true">
-      <circle cx="21" cy="21" r="20" />
-    </svg>
-    <i class="fas fa-moon"></i>
-  </button>
-</li>
-</ul>
+<nav class="navbar" aria-label="Primary navigation">
+  <ul>
+    <li><a href="index.html">about</a></li>
+    <li><a class="active" href="cv.html">cv</a></li>
+    <li><a href="research.html">research</a></li>
+    <li><a href="teaching.html">teaching</a></li>
+    <li>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch to dark theme">
+        <svg class="hover-ring" viewBox="0 0 42 42" aria-hidden="true">
+          <circle cx="21" cy="21" r="20" />
+        </svg>
+        <span class="theme-symbol" aria-hidden="true"></span>
+      </button>
+    </li>
+  </ul>
 </nav>
 
-  <!-- CV PDF Embed and Download -->
-  <main class="cv-container">
-    <div class="pdf-container">
-      <iframe src="assets/Pizzochera_cv26.pdf" frameborder="0"></iframe>
-    </div>
-    <div class="download-container">
-      <a href="assets/Pizzochera_cv26.pdf" target="_blank" class="download-btn">Download my CV (PDF)</a>
-    </div>
-  </main>
+<main class="cv-container">
+  <div class="pdf-container">
+    <iframe src="assets/Pizzochera_cv26.pdf" title="Emanuele Pizzochera CV"></iframe>
+  </div>
+  <div class="download-container">
+    <a href="assets/Pizzochera_cv26.pdf" target="_blank" rel="noopener noreferrer" class="download-btn">Download my CV (PDF)</a>
+  </div>
+</main>
 
 <footer>
- © 2026 Emanuele Francesco Pizzochera. Inspired by the <a href="https://github.com/alshedivat/al-folio" target="_blank">al-folio</a> theme.
+  &copy; 2026 Emanuele Francesco Pizzochera. Inspired by the
+  <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a>
+  theme.
 </footer>
 
 <script src="script.js"></script>

@@ -12,77 +12,76 @@
   referrerpolicy="no-referrer"
 />
 <link rel="stylesheet" href="styles.css" />
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
 </head>
 <body>
-<nav class="navbar">
-<ul>
-<li><a class="active" href="index.html">about</a></li>
-<li><a href="cv.html">cv</a></li>
-<li><a href="#">research</a></li>
-<li><a href="teaching.html">teaching</a></li>
-<li>
-  <button class="theme-toggle" aria-label="Toggle theme">
-    <svg class="hover-ring" viewBox="0 0 42 42" aria-hidden="true">
-      <circle cx="21" cy="21" r="20" />
-    </svg>
-    <i class="fas fa-moon"></i>
-  </button>
-</li>
-</ul>
+<nav class="navbar" aria-label="Primary navigation">
+  <ul>
+    <li><a class="active" href="index.html">about</a></li>
+    <li><a href="cv.html">cv</a></li>
+    <li><a href="research.html">research</a></li>
+    <li><a href="teaching.html">teaching</a></li>
+    <li>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch to dark theme">
+        <svg class="hover-ring" viewBox="0 0 42 42" aria-hidden="true">
+          <circle cx="21" cy="21" r="20" />
+        </svg>
+        <span class="theme-symbol" aria-hidden="true"></span>
+      </button>
+    </li>
+  </ul>
 </nav>
-<main class="container">
-<div class="text-column">
-<h1><strong>Emanuele Pizzochera</strong> </h1>
-<p>
- Ciao! I'm a Finance PhD student at
-<a href="https://www.unibocconi.eu" target="_blank">Università Bocconi</a>,
- where I previously worked at the
-<a href="https://igier.unibocconi.eu" target="_blank">IGIER Institute</a> and Department of Finance.
-</p>
-<p>
-I hold a M.Sc. in Economics and Econometrics from the University of Bologna (2023), and a B.A. in Politics & Economics from the University of Milano (2021).
-</p>
-</div>
-<div class="photo-column">
-<img src="assets/Webpropic.jpg" alt="Emanuele Pizzochera" class="profile-img" />
-</div>
+
+<main class="container home-layout">
+  <div class="text-column">
+    <h1>Emanuele Pizzochera</h1>
+    <p>
+      Ciao! I'm a Finance PhD student at
+      <a href="https://www.unibocconi.eu" target="_blank" rel="noopener noreferrer">Universit&agrave; Bocconi</a>,
+      where I previously worked at the
+      <a href="https://igier.unibocconi.eu" target="_blank" rel="noopener noreferrer">IGIER Institute</a>
+      and Department of Finance.
+    </p>
+    <p>
+      I hold a M.Sc. in Economics and Econometrics from the University of Bologna (2023), and a B.A. in Politics &amp; Economics from the University of Milano (2021).
+    </p>
+  </div>
+
+  <div class="photo-column">
+    <img src="assets/Webpropic.jpg" alt="Emanuele Pizzochera" class="profile-img" />
+  </div>
 </main>
 
-<section class="contact-section">
+<section class="contact-section" aria-label="Contact information">
   <div class="contact-dropdown">
-  <button
-    class="contact-toggle"
-    type="button"
-    aria-expanded="false"
-    aria-controls="contact-content"
-  >
-    Contact me
-  </button>
+    <button
+      class="contact-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="contact-content"
+    >
+      contact
+    </button>
 
-  <div class="contact-content" id="contact-content">
-    <div class="contact-panel">
+    <div class="contact-content" id="contact-content">
+      <div class="contact-panel">
         <div class="contact-item">
-           <h3><strong>Office address</strong></h3>
+          <h2>Office address</h2>
           <address>
             2-B3-SR01<br />
-            Via Guglielmo Röntgen, 1,<br />
+            Via Guglielmo R&ouml;ntgen, 1,<br />
             20136 Milano MI, Italy
           </address>
         </div>
 
         <div class="contact-item">
-          <h3><strong>Email</strong></h3>
+          <h2>Email</h2>
           <a href="mailto:emanuele.pizzochera2@phd.unibocconi.it">
             emanuele.pizzochera2[at]phd[dot]unibocconi[dot]it
           </a>
         </div>
 
         <div class="contact-item">
-          <h3><strong>Social media</strong></h3>
+          <h2>Social media</h2>
           <div class="social-links">
             <a
               href="https://www.linkedin.com/in/emanuele-francesco-pizzochera/"
@@ -90,7 +89,7 @@ I hold a M.Sc. in Economics and Econometrics from the University of Bologna (202
               rel="noopener noreferrer"
               aria-label="LinkedIn"
             >
-              <i class="fab fa-linkedin-in"></i>
+              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
             </a>
 
             <a
@@ -99,21 +98,19 @@ I hold a M.Sc. in Economics and Econometrics from the University of Bologna (202
               rel="noopener noreferrer"
               aria-label="GitHub"
             >
-              <i class="fab fa-github"></i>
+              <i class="fab fa-github" aria-hidden="true"></i>
             </a>
           </div>
         </div>
       </div>
     </div>
-  </details>
+  </div>
 </section>
 
-
-
-
-
 <footer>
- © 2026 Emanuele Francesco Pizzochera. Inspired by the <a href="https://github.com/alshedivat/al-folio" target="_blank">al-folio</a> theme.
+  &copy; 2026 Emanuele Francesco Pizzochera. Inspired by the
+  <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a>
+  theme.
 </footer>
 
 <script src="script.js"></script>
