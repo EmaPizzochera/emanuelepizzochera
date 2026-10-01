@@ -32,6 +32,21 @@ document.addEventListener('DOMContentLoaded', () => {
     contactToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 
+  document.querySelectorAll('.paper-dropdown').forEach((dropdown) => {
+    const toggle = dropdown.querySelector('.paper-toggle');
+    const content = dropdown.querySelector('.paper-content');
+
+    if (!toggle || !content) {
+      return;
+    }
+
+    toggle.addEventListener('click', () => {
+      const isOpen = dropdown.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      content.inert = !isOpen;
+    });
+  });
+
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (event) => {
       const targetId = anchor.getAttribute('href');

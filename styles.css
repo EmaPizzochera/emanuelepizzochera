@@ -9,6 +9,7 @@
   --nav-bg: #faf7f0;
   --shadow-color: rgba(0, 0, 0, 0.1);
   --site-width: 1200px;
+  --dropdown-duration: 0.35s;
 }
 
 [data-theme="dark"] {
@@ -256,6 +257,89 @@ a:hover::after {
   margin-top: 2rem;
 }
 
+.paper-list {
+  max-width: 72ch;
+}
+
+.paper-dropdown {
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.25rem 0;
+  overflow-wrap: anywhere;
+}
+
+.paper-heading {
+  margin: 0;
+}
+
+.paper-toggle {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 0 0 0 1.25rem;
+  background: none;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  text-align: left;
+  cursor: pointer;
+}
+
+.paper-toggle::before {
+  content: '';
+  position: absolute;
+  top: 0.5em;
+  left: 0.1rem;
+  border-top: 0.25em solid transparent;
+  border-bottom: 0.25em solid transparent;
+  border-left: 0.35em solid currentColor;
+  transition: transform var(--dropdown-duration) ease;
+}
+
+.paper-dropdown.open .paper-toggle::before {
+  transform: rotate(90deg);
+}
+
+.paper-toggle:focus-visible {
+  outline: 2px solid var(--text-muted);
+  outline-offset: 4px;
+}
+
+.paper-title {
+  display: inline;
+  padding-bottom: 0.18rem;
+  color: inherit;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 0 2px;
+  transition: background-size 0.3s ease;
+}
+
+.paper-toggle:hover .paper-title {
+  background-size: 100% 2px;
+}
+
+.paper-panel {
+  min-height: 0;
+  padding-left: 1.25rem;
+  overflow: hidden;
+  color: var(--text-tertiary);
+}
+
+.paper-content h4 {
+  margin: 0 0 0.45rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.paper-content p:last-child {
+  margin-bottom: 0;
+}
+
 .photo-column {
   display: flex;
   flex: 0 0 360px;
@@ -354,15 +438,19 @@ a:hover::after {
   outline-offset: 4px;
 }
 
-.contact-content {
+.contact-content,
+.paper-content {
   display: grid;
   grid-template-rows: 0fr;
   opacity: 0;
   margin-top: 0;
-  transition: grid-template-rows 0.35s ease, opacity 0.35s ease, margin-top 0.35s ease;
+  transition: grid-template-rows var(--dropdown-duration) ease,
+    opacity var(--dropdown-duration) ease,
+    margin-top var(--dropdown-duration) ease;
 }
 
-.contact-dropdown.open .contact-content {
+.contact-dropdown.open .contact-content,
+.paper-dropdown.open .paper-content {
   grid-template-rows: 1fr;
   opacity: 1;
   margin-top: 0.9rem;
@@ -453,6 +541,14 @@ footer a {
 
 footer a:hover {
   color: var(--accent-color) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-content,
+  .paper-content,
+  .paper-toggle::before {
+    transition: none;
+  }
 }
 
 @media (max-width: 768px) {
