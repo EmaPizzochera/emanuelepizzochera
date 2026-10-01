@@ -258,7 +258,7 @@ a:hover::after {
 }
 
 .paper-list {
-  max-width: 72ch;
+  width: 100%;
 }
 
 .paper-dropdown {
@@ -278,7 +278,7 @@ a:hover::after {
   border: none;
   padding: 0 0 0 1.25rem;
   background: none;
-  color: var(--text-muted);
+  color: var(--text-color);
   font: inherit;
   font-size: 1.25rem;
   line-height: 1.5;
@@ -308,19 +308,17 @@ a:hover::after {
 
 .paper-title {
   display: inline;
-  padding-bottom: 0.18rem;
   color: inherit;
   font-size: 1.25rem;
   font-weight: 500;
-  background-image: linear-gradient(currentColor, currentColor);
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  background-size: 0 2px;
-  transition: background-size 0.3s ease;
 }
 
-.paper-toggle:hover .paper-title {
-  background-size: 100% 2px;
+.paper-coauthors {
+  margin: 0.25rem 0 0;
+  padding-left: 1.25rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .paper-panel {
