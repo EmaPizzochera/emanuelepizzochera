@@ -16,6 +16,7 @@
   --accent-color: #800080;
   --nav-bg: #faf7f0;
   --shadow-color: rgba(0, 0, 0, 0.1);
+  --portrait-shadow-color: rgba(0, 0, 0, 0.06);
   --site-width: 1200px;
   --reading-width: 66ch;
   --dropdown-duration: 0.35s;
@@ -31,6 +32,7 @@
   --accent-color: #a855f7;
   --nav-bg: #0d1117;
   --shadow-color: rgba(0, 0, 0, 0.3);
+  --portrait-shadow-color: rgba(0, 0, 0, 0.18);
   color-scheme: dark;
 }
 
@@ -119,6 +121,11 @@ address {
 
 .navbar a.active {
   color: var(--text-color) !important;
+  font-weight: 600;
+}
+
+.navbar a.active::after {
+  width: 100%;
 }
 
 a {
@@ -376,7 +383,7 @@ a:hover::after {
   border-radius: 8px;
   object-fit: cover;
   object-position: center 38%;
-  box-shadow: 0 4px 12px var(--shadow-color);
+  box-shadow: 0 2px 8px var(--portrait-shadow-color);
   transition: box-shadow 0.3s ease;
 }
 
