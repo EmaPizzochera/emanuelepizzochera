@@ -17,6 +17,7 @@
   --nav-bg: #faf7f0;
   --shadow-color: rgba(0, 0, 0, 0.1);
   --site-width: 1200px;
+  --reading-width: 66ch;
   --dropdown-duration: 0.35s;
 }
 
@@ -258,16 +259,25 @@ a:hover::after {
   min-width: 0;
 }
 
-.text-column p {
-  max-width: 72ch;
+.home-layout .text-column > p,
+.paper-panel p {
+  max-width: var(--reading-width);
 }
 
 .entry-list {
-  max-width: 66ch;
+  max-width: var(--reading-width);
+}
+
+.entry-list h2 {
+  margin-bottom: 0.75rem;
+}
+
+.entry-list p:last-child {
+  margin-bottom: 0;
 }
 
 .entry-list + .entry-list {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 .paper-list {
